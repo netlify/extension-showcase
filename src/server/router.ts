@@ -8,20 +8,23 @@ import {
 import { NetlifyExtensionClient } from "@netlify/sdk";
 
 export const appRouter = router({
-  readAccount: procedure.query(async ({ ctx: { teamId, client: c } }) => {
-    try {
-      const client = c as ShowcaseNetlifyClient;
-      if (!teamId) {
-        throw new TRPCError({
-          code: "BAD_REQUEST",
-          message: "teamId is required",
-        });
+  readAccountSetting: procedure.query(
+    async ({ ctx: { teamId, client: c } }) => {
+      try {
+        const client = c as ShowcaseNetlifyClient;
+        if (!teamId) {
+          throw new TRPCError({
+            code: "BAD_REQUEST",
+            message: "teamId is required",
+          });
+        }
+        return (await client.getTeamConfiguration(teamId))?.config
+          .accountSetting;
+      } catch (e) {
+        throw maskInternalErrors(e as Error);
       }
-      return (await client.getTeamConfiguration(teamId))?.config.accountSetting;
-    } catch (e) {
-      throw maskInternalErrors(e as Error);
     }
-  }),
+  ),
 
   teamSettings: {
     read: procedure.query(async ({ ctx: { teamId, client: c } }) => {
@@ -63,6 +66,54 @@ export const appRouter = router({
             await client.updateTeamConfiguration(teamId, newConfig);
           } else {
             await client.createTeamConfiguration(teamId, newConfig);
+          }
+        } catch (e) {
+          throw maskInternalErrors(e as Error);
+        }
+      }),
+  },
+
+  siteSettings: {
+    read: procedure.query(async ({ ctx: { teamId, siteId, client: c } }) => {
+      try {
+        const client = c as ShowcaseNetlifyClient;
+        if (!teamId || !siteId) {
+          throw new TRPCError({
+            code: "BAD_REQUEST",
+            message: "teamId and siteId and required",
+          });
+        }
+        const config = (await client.getSiteConfiguration(teamId, siteId))
+          ?.config;
+        if (!config) {
+          return;
+        }
+        return SiteSettings.parse(config);
+      } catch (e) {
+        throw maskInternalErrors(e as Error);
+      }
+    }),
+    update: procedure
+      .input(SiteSettings.strict())
+      .mutation(async ({ ctx: { teamId, siteId, client: c }, input }) => {
+        try {
+          const client = c as ShowcaseNetlifyClient;
+          if (!teamId || !siteId) {
+            throw new TRPCError({
+              code: "BAD_REQUEST",
+              message: "teamId and siteId and required",
+            });
+          }
+          const config = (await client.getSiteConfiguration(teamId, siteId))
+            ?.config;
+          const newConfig = {
+            ...config,
+            ...input,
+          };
+          if (config) {
+            await client.updateSiteConfiguration(teamId, siteId, newConfig);
+          } else {
+            await client.createSiteConfiguration(teamId, siteId, newConfig);
           }
         } catch (e) {
           throw maskInternalErrors(e as Error);
