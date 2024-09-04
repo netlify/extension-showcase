@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=https://sdk.netlify.com/sdk/config-schema.json
+config:
+  slug: showcase
+  name: showcase
+  description: Showcases the Netlify SDK
+  scopes:
+    site: ["read", "write"]
+    user: ["read", "write"]
+    env: ["read", "write"]
+
+  # set this to true to add a global require shim to esbuild. Workaround for https://github.com/evanw/esbuild/issues/1921
+  use_cjs_shims: false
+
+  ui:
+    surfaces:
+      - extension-team-configuration
