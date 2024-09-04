@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://sdk.netlify.com/sdk/config-schema.json
 config:
-  slug: showcase
+  slug: leqfnf6m-showcase
   name: showcase
   description: Showcases the Netlify SDK
   scopes:
@@ -14,3 +14,6 @@ config:
   ui:
     surfaces:
       - extension-team-configuration
+      - extension-connect-configuration
+      - extension-top-level-site-configuration
+      - extension-site-general-configuration

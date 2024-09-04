@@ -3,7 +3,7 @@ import { NetlifyExtension } from "@netlify/sdk";
 
 const extension = new NetlifyExtension();
 const connector = extension.addConnector({
-  typePrefix: "Example",
+  typePrefix: "Showcase",
   supports: {
     connect: true,
     visualEditor: false,
@@ -71,6 +71,8 @@ connector.sync(({ models, isInitialSync }) => {
             __typename: "Post",
           },
         ],
+        _status: "published",
+        _createdAt: new Date(),
       });
       models.Post.insert({
         id: "1",
@@ -81,8 +83,10 @@ connector.sync(({ models, isInitialSync }) => {
             content: "You can create complex content models",
           },
         ],
+        _status: "published",
+        _createdAt: new Date(),
       });
-      break
+      break;
     }
     case !isInitialSync: {
       models.User.insert({
@@ -94,6 +98,8 @@ connector.sync(({ models, isInitialSync }) => {
             __typename: "Post",
           },
         ],
+        _status: "published",
+        _createdAt: new Date(),
       });
       models.Post.insert({
         id: "2", // creates a new Post since this ID doesn't exist yet
@@ -104,19 +110,22 @@ connector.sync(({ models, isInitialSync }) => {
             content: "what up",
           },
         ],
+        _status: "published",
+        _createdAt: new Date(),
       });
-      break
+      break;
     }
   }
 });
 
 extension.addBuildEventHandler("onPreBuild", () => {
-  console.log("Hello there.");
+  console.log("======================");
+  console.log("==== Hello there. ====");
+  console.log("======================");
 });
-  
+
 extension.addEdgeFunctions("./src/edge-functions", {
   prefix: "ef_prefix",
 });
 
 export { extension };
-

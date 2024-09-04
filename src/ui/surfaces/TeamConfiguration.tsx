@@ -1,24 +1,22 @@
+import { useNetlifySDK } from "@netlify/sdk/ui/react";
 import {
   Card,
   CardLoader,
   CardTitle,
-  Checkbox,
   Form,
   FormField,
-  FormFieldSecret,
   TeamConfigurationSurface,
 } from "@netlify/sdk/ui/react/components";
-import { useNetlifySDK } from "@netlify/sdk/ui/react";
+import { SafeTeamSettings } from "../../schema/settings-schema";
 import { trpc } from "../trpc";
-import { teamSettingsSchema } from "../../schema/team-settings-schema";
 
 export const TeamConfiguration = () => {
   const sdk = useNetlifySDK();
   const trpcUtils = trpc.useUtils();
-  const teamSettingsQuery = trpc.teamSettings.query.useQuery();
-  const teamSettingsMutation = trpc.teamSettings.mutate.useMutation({
+  const teamSettingsQuery = trpc.teamSettings.read.useQuery();
+  const teamSettingsMutation = trpc.teamSettings.update.useMutation({
     onSuccess: async () => {
-      await trpcUtils.teamSettings.query.invalidate();
+      await trpcUtils.teamSettings.read.invalidate();
     },
   });
 
@@ -29,40 +27,21 @@ export const TeamConfiguration = () => {
   return (
     <TeamConfigurationSurface>
       <Card>
-        <CardTitle>Example Section for {sdk.extension.name}</CardTitle>
+        <CardTitle>Team-level Configuration for {sdk.extension.name}</CardTitle>
         <Form
           defaultValues={
             teamSettingsQuery.data ?? {
-              exampleString: "",
-              exampleSecret: "",
-              exampleBoolean: false,
-              exampleNumber: 123,
+              accountSetting: "",
             }
           }
-          schema={teamSettingsSchema}
+          schema={SafeTeamSettings}
           onSubmit={teamSettingsMutation.mutateAsync}
         >
           <FormField
-            name="exampleString"
+            name="accountSetting"
             type="text"
-            label="Example String"
-            helpText="This is an example string"
-          />
-          <FormField
-            name="exampleNumber"
-            type="number"
-            label="Example Number"
-            helpText="This is an example number"
-          />
-          <FormFieldSecret
-            name="exampleSecret"
-            label="Example Secret"
-            helpText="This is an example secret"
-          />
-          <Checkbox
-            name="exampleBoolean"
-            label="Example Boolean"
-            helpText="This is an example boolean"
+            label="Some account setting"
+            helpText="You can put any reasonable string here"
           />
         </Form>
       </Card>
