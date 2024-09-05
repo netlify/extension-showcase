@@ -1,5 +1,6 @@
 // Documentation: https://sdk.netlify.com
 import { NetlifyExtension } from "@netlify/sdk";
+import { makeConnectSettings } from "./schema/settings-schema";
 
 const extension = new NetlifyExtension();
 const connector = extension.addConnector({
@@ -7,6 +8,12 @@ const connector = extension.addConnector({
   supports: {
     connect: true,
     visualEditor: false,
+  },
+  localDevOptions: {
+    numberOfMockItems: 5,
+  },
+  defineOptions({ zod }) {
+    return makeConnectSettings(zod);
   },
 });
 
@@ -59,60 +66,64 @@ connector.model(async ({ define }) => {
  * Fetch and store data from your API here.
  * https://developers.netlify.com/sdk/api-reference/classes/netlifyconnector/#sync
  */
-connector.sync(({ models, isInitialSync }) => {
+connector.sync(({ models, isInitialSync, options: { numberOfMockItems } }) => {
   switch (true) {
     case isInitialSync: {
-      models.User.insert({
-        id: "1",
-        name: "Annie",
-        posts: [
-          {
-            id: "1",
-            __typename: "Post",
-          },
-        ],
-        _status: "published",
-        _createdAt: new Date(),
-      });
-      models.Post.insert({
-        id: "1",
-        title: "Hello World",
-        blocks: [
-          {
-            title: "Example block title",
-            content: "You can create complex content models",
-          },
-        ],
-        _status: "published",
-        _createdAt: new Date(),
-      });
+      for (let i = 0; i < numberOfMockItems; i++) {
+        models.User.insert({
+          id: i.toString(),
+          name: `Annie ${i}`,
+          posts: [
+            {
+              id: i.toString(),
+              __typename: "Post",
+            },
+          ],
+          _status: "published",
+          _createdAt: new Date(),
+        });
+        models.Post.insert({
+          id: i.toString(),
+          title: `Hello World ${i}`,
+          blocks: [
+            {
+              title: "Example block title",
+              content: "You can create complex content models",
+            },
+          ],
+          _status: "published",
+          _createdAt: new Date(),
+        });
+      }
       break;
     }
     case !isInitialSync: {
-      models.User.insert({
-        id: "1", // overwrites the existing User node with this ID
-        name: "Annie",
-        posts: [
-          {
-            id: "1",
-            __typename: "Post",
-          },
-        ],
-        _status: "published",
-        _createdAt: new Date(),
-      });
-      models.Post.insert({
-        id: "2", // creates a new Post since this ID doesn't exist yet
-        title: "Writing lots of posts these days",
-        blocks: [
-          {
-            title: "Page section",
-            content: "what up",
-          },
-        ],
-        _status: "published",
-        _createdAt: new Date(),
-      });
+      for (let i = 0; i < numberOfMockItems; i++) {
+        models.User.insert({
+          id: i.toString(), // overwrites the existing User node with this ID
+          name: `Annie ${i}`,
+          posts: [
+            {
+              id: i.toString(),
+              __typename: "Post",
+            },
+          ],
+          _status: "published",
+          _createdAt: new Date(),
+        });
+        models.Post.insert({
+          id: i.toString(), // creates a new Post since this ID doesn't exist yet
+          title: `Writing lots of posts these days ${i}`,
+          blocks: [
+            {
+              title: "Page section",
+              content: "what up",
+            },
+          ],
+          _status: "published",
+          _createdAt: new Date(),
+        });
+      }
       break;
     }
   }

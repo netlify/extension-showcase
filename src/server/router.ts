@@ -1,11 +1,13 @@
 import { TRPCError } from "@trpc/server";
 import { procedure, router } from "./trpc";
 import {
+  CommonDataSourceSchema,
+  ConnectSettings,
   SafeTeamSettings,
   SiteSettings,
   TeamSettings,
 } from "../schema/settings-schema";
-import { NetlifyExtensionClient } from "@netlify/sdk";
+import { NetlifyExtensionClient, z } from "@netlify/sdk";
 
 export const appRouter = router({
   readAccountSetting: procedure.query(
@@ -83,12 +85,7 @@ export const appRouter = router({
             message: "teamId and siteId and required",
           });
         }
-        const config = (await client.getSiteConfiguration(teamId, siteId))
-          ?.config;
-        if (!config) {
-          return;
-        }
-        return SiteSettings.parse(config);
+        return (await client.getSiteConfiguration(teamId, siteId))?.config;
       } catch (e) {
         throw maskInternalErrors(e as Error);
       }
@@ -120,6 +117,96 @@ export const appRouter = router({
         }
       }),
   },
+
+  connectSettings: {
+    read: procedure
+      .input(
+        z.object({
+          dataLayerId: z.string(),
+          configurationId: z.string().optional(),
+        })
+      )
+      .query(
+        async ({
+          ctx: { teamId, client: c },
+          input: { dataLayerId, configurationId },
+        }) => {
+          try {
+            if (!configurationId) {
+              return;
+            }
+            const client = c as ShowcaseNetlifyClient;
+            if (!teamId) {
+              throw new TRPCError({
+                code: "BAD_REQUEST",
+                message: "teamId is required",
+              });
+            }
+            const config = (
+              await client.getConnectConfiguration({
+                teamId,
+                dataLayerId,
+                configurationId,
+              })
+            );
+            if (!config) {
+              return;
+            }
+            return {
+              name: config.name,
+              prefix: config.prefix,
+              config: config.config,
+            };
+          } catch (e) {
+            throw maskInternalErrors(e as Error);
+          }
+        }
+      ),
+    upsert: procedure
+      .input(
+        z.object({
+          dataLayerId: z.string(),
+          configurationId: z.string().optional(),
+          config: ConnectSettings,
+        }).merge(CommonDataSourceSchema)
+      )
+      .mutation(
+        async ({
+          ctx: { teamId, client: c },
+          input: { dataLayerId, configurationId, name, prefix, config },
+        }) => {
+          try {
+            const client = c as ShowcaseNetlifyClient;
+            if (!teamId) {
+              throw new TRPCError({
+                code: "BAD_REQUEST",
+                message: "teamId is required",
+              });
+            }
+            if (configurationId && configurationId !== "") {
+              await client.updateConnectConfiguration({
+                teamId,
+                dataLayerId,
+                configurationId,
+                name,
+                prefix,
+                config,
+              });
+            } else {
+              await client.createConnectConfiguration({
+                teamId,
+                dataLayerId,
+                name,
+                prefix,
+                config,
+              });
+            }
+          } catch (e) {
+            throw maskInternalErrors(e as Error);
+          }
+        }
+      ),
+  },
 });
 
 export type AppRouter = typeof appRouter;
@@ -138,5 +225,5 @@ function maskInternalErrors(e: Error) {
 export type ShowcaseNetlifyClient = NetlifyExtensionClient<
   SiteSettings,
   TeamSettings,
-  unknown
+  ConnectSettings
 >;
