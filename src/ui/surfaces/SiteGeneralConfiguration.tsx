@@ -6,6 +6,7 @@ import {
   Checkbox,
   Form,
   FormField,
+  Link,
   SiteGeneralConfigurationSurface,
 } from "@netlify/sdk/ui/react/components";
 import { trpc } from "../trpc";
@@ -52,6 +53,12 @@ export const SiteGeneralConfiguration = () => {
             helpText="You can put any reasonable string here"
           />
         </Form>
+        <hr />
+        The code for this surface can be seen here:
+        <ul>
+          <li>&nbsp;&nbsp;<Link href="https://github.com/netlify/extension-showcase/blob/main/src/ui/surfaces/SiteGeneralConfiguration.tsx" target="_blank">React UI code</Link></li>
+          <li>&nbsp;&nbsp;<Link href="https://github.com/netlify/extension-showcase/blob/main/src/server/router.ts" target="_blank">Server code</Link></li>
+        </ul>
       </Card>
     </SiteGeneralConfigurationSurface>
   );
