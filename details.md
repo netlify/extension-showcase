@@ -25,6 +25,8 @@ The first is as an extension-managed page in the Netlify sidebar. This is a grea
 
 ![Netlify sidebar with the Showcase extension](/assets/sidebar.png)
 
+
+
 The rest are surfaces within Netlify's site configuration. You can control where it appears within site configurations, with the supported options listed here: [Site sections](https://future-state-v2-docs--sdk.netlify.com/sdk/extension-ui/add-a-new-surface/#site-sections). The Showcase extension includes one such surface in "Site configuration > General" right above the "Danger zone".
 
 ![Netlify site settings with the Showcase extension](/assets/site-settings.png)
