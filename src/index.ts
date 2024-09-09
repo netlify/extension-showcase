@@ -130,6 +130,9 @@ connector.sync(({ models, isInitialSync, options: { numberOfMockItems } }) => {
 });
 
 extension.addBuildEventHandler("onPreBuild", () => {
+  if (process.env.SHOWCASE_ENABLED !== "1") {
+    return;
+  }
   console.log("======================");
   console.log("==== Hello there. ====");
   console.log("======================");

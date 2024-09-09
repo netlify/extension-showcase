@@ -112,6 +112,13 @@ export const appRouter = router({
           } else {
             await client.createSiteConfiguration(teamId, siteId, newConfig);
           }
+          await client.createOrUpdateVariables({
+            accountId: teamId,
+            siteId,
+            variables: {
+              SHOWCASE_ENABLED: newConfig.enabled ? "1" : "0",
+            },
+          });
         } catch (e) {
           throw maskInternalErrors(e as Error);
         }
