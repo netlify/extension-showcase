@@ -140,6 +140,9 @@ extension.addBuildEventHandler("onPreBuild", () => {
 
 extension.addEdgeFunctions("./src/edge-functions", {
   prefix: "ef_prefix",
+  shouldInjectFunction() {
+    return process.env.SHOWCASE_ENABLED === "1";
+  },
 });
 
 export { extension };
