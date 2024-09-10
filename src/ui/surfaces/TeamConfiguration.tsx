@@ -22,7 +22,11 @@ export const TeamConfiguration = () => {
   });
 
   if (teamSettingsQuery.isLoading) {
-    return <CardLoader />;
+    return (
+      <TeamConfigurationSurface>
+        <CardLoader />
+      </TeamConfigurationSurface>
+    );
   }
 
   return (
@@ -48,8 +52,24 @@ export const TeamConfiguration = () => {
         <hr />
         The code for this surface can be seen here:
         <ul>
-          <li>&nbsp;&nbsp;<Link href="https://github.com/netlify/extension-showcase/blob/main/src/ui/surfaces/TeamConfiguration.tsx" target="_blank">React UI code</Link></li>
-          <li>&nbsp;&nbsp;<Link href="https://github.com/netlify/extension-showcase/blob/main/src/server/router.ts" target="_blank">Server code</Link></li>
+          <li>
+            &nbsp;&nbsp;
+            <Link
+              href="https://github.com/netlify/extension-showcase/blob/main/src/ui/surfaces/TeamConfiguration.tsx"
+              target="_blank"
+            >
+              React UI code
+            </Link>
+          </li>
+          <li>
+            &nbsp;&nbsp;
+            <Link
+              href="https://github.com/netlify/extension-showcase/blob/main/src/server/router.ts"
+              target="_blank"
+            >
+              Server code
+            </Link>
+          </li>
         </ul>
       </Card>
     </TeamConfigurationSurface>
