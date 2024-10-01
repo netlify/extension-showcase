@@ -54,19 +54,13 @@ export const TeamConfiguration = () => {
         <ul>
           <li>
             &nbsp;&nbsp;
-            <Link
-              href="https://github.com/netlify/extension-showcase/blob/main/src/ui/surfaces/TeamConfiguration.tsx"
-              target="_blank"
-            >
+            <Link href="https://github.com/netlify/extension-showcase/blob/main/src/ui/surfaces/TeamConfiguration.tsx">
               React UI code
             </Link>
           </li>
           <li>
             &nbsp;&nbsp;
-            <Link
-              href="https://github.com/netlify/extension-showcase/blob/main/src/server/router.ts"
-              target="_blank"
-            >
+            <Link href="https://github.com/netlify/extension-showcase/blob/main/src/server/router.ts">
               Server code
             </Link>
           </li>

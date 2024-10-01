@@ -9,7 +9,10 @@ import {
 } from "@netlify/sdk/ui/react/components";
 import { trpc } from "../trpc";
 import { useNetlifySDK } from "@netlify/sdk/ui/react";
-import { CommonDataSourceSchema, ConnectSettings } from "../../schema/settings-schema";
+import {
+  CommonDataSourceSchema,
+  ConnectSettings,
+} from "../../schema/settings-schema";
 
 export const ConnectConfiguration = () => {
   const sdk = useNetlifySDK();
@@ -51,14 +54,17 @@ export const ConnectConfiguration = () => {
           <CardTitle>Data Source Configuration</CardTitle>
           <Form
             defaultValues={
-              connectSettingsQuery.data ? {
-                ...connectSettingsQuery.data,
-                numberOfMockItems: connectSettingsQuery.data.config.numberOfMockItems ?? 5,
-              } : {
-                numberOfMockItems: 5,
-                name: "",
-                prefix: "",
-              }
+              connectSettingsQuery.data
+                ? {
+                    ...connectSettingsQuery.data,
+                    numberOfMockItems:
+                      connectSettingsQuery.data.config.numberOfMockItems ?? 5,
+                  }
+                : {
+                    numberOfMockItems: 5,
+                    name: "",
+                    prefix: "",
+                  }
             }
             schema={ConnectSettings.merge(CommonDataSourceSchema)}
             onSubmit={onSubmit}
@@ -78,12 +84,22 @@ export const ConnectConfiguration = () => {
               required
             />
           </Form>
-        <hr />
-        The code for this surface can be seen here:
-        <ul>
-          <li>&nbsp;&nbsp;<Link href="https://github.com/netlify/extension-showcase/blob/main/src/ui/surfaces/ConnectConfiguration.tsx" target="_blank">React UI code</Link></li>
-          <li>&nbsp;&nbsp;<Link href="https://github.com/netlify/extension-showcase/blob/main/src/server/router.ts" target="_blank">Server code</Link></li>
-        </ul>
+          <hr />
+          The code for this surface can be seen here:
+          <ul>
+            <li>
+              &nbsp;&nbsp;
+              <Link href="https://github.com/netlify/extension-showcase/blob/main/src/ui/surfaces/ConnectConfiguration.tsx">
+                React UI code
+              </Link>
+            </li>
+            <li>
+              &nbsp;&nbsp;
+              <Link href="https://github.com/netlify/extension-showcase/blob/main/src/server/router.ts">
+                Server code
+              </Link>
+            </li>
+          </ul>
         </Card>
       )}
     </ConnectConfigurationSurface>

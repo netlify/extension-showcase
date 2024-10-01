@@ -48,12 +48,22 @@ export const SiteConfiguration = () => {
             <code>{accountSettingQuery.data}</code>
           </p>
           {siteSettingsSummary}
-        <hr />
-        The code for this surface can be seen here:
-        <ul>
-          <li>&nbsp;&nbsp;<Link href="https://github.com/netlify/extension-showcase/blob/main/src/ui/surfaces/SiteConfiguration.tsx" target="_blank">React UI code</Link></li>
-          <li>&nbsp;&nbsp;<Link href="https://github.com/netlify/extension-showcase/blob/main/src/server/router.ts" target="_blank">Server code</Link></li>
-        </ul>
+          <hr />
+          The code for this surface can be seen here:
+          <ul>
+            <li>
+              &nbsp;&nbsp;
+              <Link href="https://github.com/netlify/extension-showcase/blob/main/src/ui/surfaces/SiteConfiguration.tsx">
+                React UI code
+              </Link>
+            </li>
+            <li>
+              &nbsp;&nbsp;
+              <Link href="https://github.com/netlify/extension-showcase/blob/main/src/server/router.ts">
+                Server code
+              </Link>
+            </li>
+          </ul>
         </Card>
       )}
     </SiteConfigurationSurface>

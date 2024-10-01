@@ -62,19 +62,13 @@ export const SiteGeneralConfiguration = () => {
         <ul>
           <li>
             &nbsp;&nbsp;
-            <Link
-              href="https://github.com/netlify/extension-showcase/blob/main/src/ui/surfaces/SiteGeneralConfiguration.tsx"
-              target="_blank"
-            >
+            <Link href="https://github.com/netlify/extension-showcase/blob/main/src/ui/surfaces/SiteGeneralConfiguration.tsx">
               React UI code
             </Link>
           </li>
           <li>
             &nbsp;&nbsp;
-            <Link
-              href="https://github.com/netlify/extension-showcase/blob/main/src/server/router.ts"
-              target="_blank"
-            >
+            <Link href="https://github.com/netlify/extension-showcase/blob/main/src/server/router.ts">
               Server code
             </Link>
           </li>
