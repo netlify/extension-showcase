@@ -19,4 +19,4 @@ npm run build
 
 ### Deploy
 
-Are you ready to deploy your extension? Check our documentation on publishing your extension as a [private extension](https://sdk.netlify.com/publish/private-extensions/) or [partner extension](https://sdk.netlify.com/publish/partner-extensions/).
+Are you ready to deploy and publish your extension? Check out our documentation on [publishing your extension](https://developers.netlify.com/sdk/publish/).
