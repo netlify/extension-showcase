@@ -12,8 +12,8 @@ importers:
         specifier: ^2.8.2
         version: 2.8.2
       '@netlify/sdk':
-        specifier: ^2.5.2
-        version: 2.5.2(@google-cloud/storage@5.20.5)(@trpc/server@11.0.0-rc.553)(@types/react@18.3.11)(autoprefixer@10.4.20(postcss@8.4.47))(graphql@16.9.0)(postcss@8.4.47)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.13(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.2)))(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.2))
+        specifier: ^2.6.1
+        version: 2.6.1(@google-cloud/storage@5.20.5)(@trpc/server@11.0.0-rc.553)(@types/react@18.3.11)(autoprefixer@10.4.20(postcss@8.4.47))(graphql@16.9.0)(postcss@8.4.47)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.13(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.2)))(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.2))
       '@tanstack/react-query':
         specifier: ^5.54.1
         version: 5.59.0(react@18.3.1)
@@ -1227,8 +1227,8 @@ packages:
     resolution: {integrity: sha512-FQegi441w8KLJO+QhU3QJWa8vlYI7HfioPwBkTKOnLpImun+L/2wcVCHaPWLgyV5o6LGwGPedXxXNgWebRiI+w==}
     engines: {node: '>=16.0.0'}
 
-  '@netlify/content-engine@1.2.2':
-    resolution: {integrity: sha512-hKkK0lJtJ106ZmRmvf+bkl283pwobiVryolUPT8mIDildrgf7ba1ku8sGPqRFaoYH0MB6eIQW6sFwlajpOwG8w==}
+  '@netlify/content-engine@1.2.3':
+    resolution: {integrity: sha512-i1ZrAx8p2XgTgdeNCmijVx810FaKqdTzRSfeWF2M/X3u55H9pjhhUy4PI6CiIoV1q5VbKzomDcYNJsmmafuUPw==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       '@google-cloud/storage': ^5.8.4
@@ -1394,8 +1394,8 @@ packages:
     resolution: {integrity: sha512-ogDibdluTkqLtKBVWye6tzh3D9GJ3jfHe7IhnbMYc1HlNiLz7QqOrLpVyqm8pOvXW5PZfJ11JPyTcs69/yTztQ==}
     hasBin: true
 
-  '@netlify/sdk@2.5.2':
-    resolution: {integrity: sha512-2D0LFo7xgHVq4p+Aa6Xt3ywqtk0BXjKDNpGzd+hIBKsTJ80uJxVs0fmkoasZK1chhUpASL84exBrIpfNTU5ydw==}
+  '@netlify/sdk@2.6.1':
+    resolution: {integrity: sha512-8AB7tH4uHsXynt4uDaRI4yEpy4/XNHSmnLtQJNEog7BKBMJ2XS/1YZ6Yiv8eWqTnXULcJXqe8QXR3InLHCQMWQ==}
     engines: {node: '>= 18.19.0'}
     hasBin: true
 
@@ -2362,6 +2362,9 @@ packages:
   ast-module-types@5.0.0:
     resolution: {integrity: sha512-JvqziE0Wc0rXQfma0HZC/aY7URXHFuZV84fJRtP8u+lhp0JYCNd5wJzVXP45t0PH0Mej3ynlzvdyITYIu0G4LQ==}
     engines: {node: '>=14'}
+
+  async-mutex@0.5.0:
+    resolution: {integrity: sha512-1A94B18jkJ3DYq284ohPxoXbfTA5HsQ7/Mf4DEhcyLx3Bz27Rh59iScbB6EPiP+B+joue6YCxcMXSbFC1tZKwA==}
 
   async-retry@1.3.3:
     resolution: {integrity: sha512-wfr/jstw9xNi/0teMHrRW7dsz3Lt5ARhYNZ2ewpadnhaIp5mbALhOAP+EAdsC7t4Z6wqsDVv9+W6gm1Dk9mEyw==}
@@ -8364,7 +8367,7 @@ snapshots:
       - debug
       - supports-color
 
-  '@netlify/content-engine@1.2.2(@google-cloud/storage@5.20.5)':
+  '@netlify/content-engine@1.2.3(@google-cloud/storage@5.20.5)':
     dependencies:
       '@babel/code-frame': 7.25.7
       '@babel/types': 7.25.7
@@ -8373,6 +8376,7 @@ snapshots:
       '@netlify/content-engine-graphiql-explorer': 1.1.0
       '@pnpm/exec': 2.0.0
       address: 1.2.2
+      async-mutex: 0.5.0
       axios: 0.21.4
       better-opn: 2.1.1
       cache-manager: 2.11.1
@@ -8704,13 +8708,13 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@netlify/sdk@2.5.2(@google-cloud/storage@5.20.5)(@trpc/server@11.0.0-rc.553)(@types/react@18.3.11)(autoprefixer@10.4.20(postcss@8.4.47))(graphql@16.9.0)(postcss@8.4.47)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.13(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.2)))(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.2))':
+  '@netlify/sdk@2.6.1(@google-cloud/storage@5.20.5)(@trpc/server@11.0.0-rc.553)(@types/react@18.3.11)(autoprefixer@10.4.20(postcss@8.4.47))(graphql@16.9.0)(postcss@8.4.47)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.13(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.2)))(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.2))':
     dependencies:
       '@commander-js/extra-typings': 12.1.0(commander@12.1.0)
       '@graphql-tools/stitch': 9.2.10(graphql@16.9.0)
       '@graphql-tools/utils': 10.5.4(graphql@16.9.0)
       '@graphql-tools/wrap': 10.0.5(graphql@16.9.0)
-      '@netlify/content-engine': 1.2.2(@google-cloud/storage@5.20.5)
+      '@netlify/content-engine': 1.2.3(@google-cloud/storage@5.20.5)
       '@netlify/functions': 2.8.2
       '@netlify/integrations': 0.6.0
       '@netlify/sdk--extension-api-client': 2.3.0
@@ -9274,7 +9278,7 @@ snapshots:
 
   '@stackbit/artisanal-names@1.0.1': {}
 
-  '@stackbit/cms-contentful@0.4.56':
+  '@stackbit/cms-contentful@0.4.56(graphql@16.9.0)':
     dependencies:
       '@contentful/rich-text-types': 15.15.1
       '@stackbit/cms-core': 2.0.1(graphql@16.9.0)
@@ -9286,6 +9290,7 @@ snapshots:
     transitivePeerDependencies:
       - debug
       - encoding
+      - graphql
       - supports-color
 
   '@stackbit/cms-core@2.0.1(graphql@16.9.0)':
@@ -9320,7 +9325,7 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@stackbit/cms-git@0.4.18':
+  '@stackbit/cms-git@0.4.18(graphql@16.9.0)':
     dependencies:
       '@stackbit/artisanal-names': 1.0.1
       '@stackbit/cms-core': 2.0.1(graphql@16.9.0)
@@ -9334,11 +9339,15 @@ snapshots:
       micromatch: 4.0.8
       slugify: 1.6.6
     transitivePeerDependencies:
+      - bufferutil
+      - canvas
       - debug
       - encoding
+      - graphql
       - supports-color
+      - utf-8-validate
 
-  '@stackbit/cms-sanity@0.2.56':
+  '@stackbit/cms-sanity@0.2.56(graphql@16.9.0)':
     dependencies:
       '@sanity/block-tools': 2.36.2
       '@sanity/client': 3.4.1
@@ -9358,17 +9367,18 @@ snapshots:
       - canvas
       - debug
       - encoding
+      - graphql
       - supports-color
       - utf-8-validate
 
-  '@stackbit/dev-common@0.5.51':
+  '@stackbit/dev-common@0.5.51(graphql@16.9.0)':
     dependencies:
       '@iarna/toml': 2.2.5
       '@stackbit/artisanal-names': 1.0.1
-      '@stackbit/cms-contentful': 0.4.56
+      '@stackbit/cms-contentful': 0.4.56(graphql@16.9.0)
       '@stackbit/cms-core': 2.0.1(graphql@16.9.0)
-      '@stackbit/cms-git': 0.4.18
-      '@stackbit/cms-sanity': 0.2.56
+      '@stackbit/cms-git': 0.4.18(graphql@16.9.0)
+      '@stackbit/cms-sanity': 0.2.56(graphql@16.9.0)
       '@stackbit/sdk': 2.0.1
       '@stackbit/types': 1.0.1
       '@stackbit/utils': 0.4.19
@@ -9394,14 +9404,15 @@ snapshots:
       - canvas
       - debug
       - encoding
+      - graphql
       - supports-color
       - utf-8-validate
 
   '@stackbit/dev@1.0.35(graphql@16.9.0)':
     dependencies:
       '@stackbit/cms-core': 2.0.1(graphql@16.9.0)
-      '@stackbit/cms-git': 0.4.18
-      '@stackbit/dev-common': 0.5.51
+      '@stackbit/cms-git': 0.4.18(graphql@16.9.0)
+      '@stackbit/dev-common': 0.5.51(graphql@16.9.0)
       '@stackbit/sdk': 2.0.1
       axios: 0.25.0
       chalk: 4.1.2
@@ -9581,7 +9592,7 @@ snapshots:
   '@types/glob@5.0.38':
     dependencies:
       '@types/minimatch': 5.1.2
-      '@types/node': 8.10.66
+      '@types/node': 22.7.4
 
   '@types/hast@3.0.4':
     dependencies:
@@ -9619,7 +9630,7 @@ snapshots:
 
   '@types/mkdirp@0.5.2':
     dependencies:
-      '@types/node': 8.10.66
+      '@types/node': 22.7.4
 
   '@types/ms@0.7.34': {}
 
@@ -9667,7 +9678,7 @@ snapshots:
   '@types/rimraf@2.0.5':
     dependencies:
       '@types/glob': 5.0.38
-      '@types/node': 8.10.66
+      '@types/node': 22.7.4
 
   '@types/scheduler@0.16.8': {}
 
@@ -9981,6 +9992,10 @@ snapshots:
   ascii-table@0.0.9: {}
 
   ast-module-types@5.0.0: {}
+
+  async-mutex@0.5.0:
+    dependencies:
+      tslib: 2.7.0
 
   async-retry@1.3.3:
     dependencies:
