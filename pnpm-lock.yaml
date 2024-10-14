@@ -13,7 +13,7 @@ importers:
         version: 2.8.2
       '@netlify/sdk':
         specifier: ^2.5.2
-        version: 2.5.2(@google-cloud/storage@5.20.5)(@trpc/server@11.0.0-rc.553)(@types/react@18.3.11)(autoprefixer@10.4.20(postcss@8.4.47))(graphql@16.9.0)(postcss@8.4.47)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.13(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.2)))(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.2))
+        version: 2.5.2(@google-cloud/storage@5.20.5)(@trpc/server@11.0.0-rc.553)(@types/react@18.3.11)(autoprefixer@10.4.20(postcss@8.4.47))(graphql@16.9.0)(postcss@8.4.47)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.13(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.3)))(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.3))
       '@tanstack/react-query':
         specifier: ^5.54.1
         version: 5.59.0(react@18.3.1)
@@ -65,10 +65,10 @@ importers:
         version: 17.36.4(@types/node@22.7.4)
       tailwindcss:
         specifier: ^3.4.10
-        version: 3.4.13(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.2))
+        version: 3.4.13(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.3))
       typescript:
         specifier: ^5.5.4
-        version: 5.6.2
+        version: 5.6.3
       vite:
         specifier: ^5.4.3
         version: 5.4.8(@types/node@22.7.4)
@@ -6782,8 +6782,8 @@ packages:
   typedarray-to-buffer@3.1.5:
     resolution: {integrity: sha512-zdu8XMNEDepKKR+XYOXAVPtWui0ly0NtohUscw+UmaHiAWT8hrV1rr//H6V+0DvJ3OQ19S979M0laLfX8rm82Q==}
 
-  typescript@5.6.2:
-    resolution: {integrity: sha512-NW8ByodCSNCwZeghjN3o+JX5OFH0Ojg6sadjEKY4huZ52TqbJTJnDo5+Tw98lSy63NZvi4n+ez5m2u5d4PkZyw==}
+  typescript@5.6.3:
+    resolution: {integrity: sha512-hjcS1mhfuyi4WW8IWtjP7brDrG2cuDZukyrYrSauoXGNgx0S7zceP07adYkJycEr56BOUTNPzbInooiN3fn1qw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -8217,8 +8217,8 @@ snapshots:
       strip-ansi: 7.1.0
       supports-color: 9.4.0
       terminal-link: 3.0.0
-      ts-node: 10.9.2(@types/node@22.7.4)(typescript@5.6.2)
-      typescript: 5.6.2
+      ts-node: 10.9.2(@types/node@22.7.4)(typescript@5.6.3)
+      typescript: 5.6.3
       uuid: 9.0.1
       yargs: 17.7.2
     transitivePeerDependencies:
@@ -8633,13 +8633,13 @@ snapshots:
       '@trpc/server': 11.0.0-rc.553
       zod: 3.23.8
 
-  '@netlify/sdk--ui-react@1.7.1(@types/react@18.3.11)(autoprefixer@10.4.20(postcss@8.4.47))(postcss@8.4.47)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.13(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.2)))(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.2))':
+  '@netlify/sdk--ui-react@1.7.1(@types/react@18.3.11)(autoprefixer@10.4.20(postcss@8.4.47))(postcss@8.4.47)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.13(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.3)))(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.3))':
     dependencies:
       '@hookform/resolvers': 3.9.0(react-hook-form@7.53.0(react@18.3.1))
       '@netlify/netlify-design-tokens': 6.0.0
       '@netlify/sdk--ui-core': 1.4.0
-      '@netlify/tailwind-config': 2.0.0(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.2))
-      '@netlify/ui': 0.0.20(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.2))
+      '@netlify/tailwind-config': 2.0.0(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.3))
+      '@netlify/ui': 0.0.20(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.3))
       '@react-hook/resize-observer': 2.0.2(react@18.3.1)
       autoprefixer: 10.4.20(postcss@8.4.47)
       hast-util-to-jsx-runtime: 2.3.0
@@ -8649,7 +8649,7 @@ snapshots:
       react-hook-form: 7.53.0(react@18.3.1)
       react-select: 5.8.1(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       shiki: 1.21.0
-      tailwindcss: 3.4.13(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.2))
+      tailwindcss: 3.4.13(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.3))
       zod: 3.23.8
     transitivePeerDependencies:
       - '@types/react'
@@ -8689,7 +8689,7 @@ snapshots:
       outdent: 0.8.0
       safe-stable-stringify: 2.5.0
       toml: 3.0.0
-      typescript: 5.6.2
+      typescript: 5.6.3
       wretch: 2.10.0
       zod: 3.23.8
       zod-metadata: 1.1.0(zod@3.23.8)
@@ -8704,7 +8704,7 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@netlify/sdk@2.5.2(@google-cloud/storage@5.20.5)(@trpc/server@11.0.0-rc.553)(@types/react@18.3.11)(autoprefixer@10.4.20(postcss@8.4.47))(graphql@16.9.0)(postcss@8.4.47)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.13(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.2)))(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.2))':
+  '@netlify/sdk@2.5.2(@google-cloud/storage@5.20.5)(@trpc/server@11.0.0-rc.553)(@types/react@18.3.11)(autoprefixer@10.4.20(postcss@8.4.47))(graphql@16.9.0)(postcss@8.4.47)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.13(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.3)))(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.3))':
     dependencies:
       '@commander-js/extra-typings': 12.1.0(commander@12.1.0)
       '@graphql-tools/stitch': 9.2.10(graphql@16.9.0)
@@ -8716,7 +8716,7 @@ snapshots:
       '@netlify/sdk--extension-api-client': 2.3.0
       '@netlify/sdk--ui-core': 1.4.0
       '@netlify/sdk--ui-functions': 1.2.0(@trpc/server@11.0.0-rc.553)
-      '@netlify/sdk--ui-react': 1.7.1(@types/react@18.3.11)(autoprefixer@10.4.20(postcss@8.4.47))(postcss@8.4.47)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.13(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.2)))(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.2))
+      '@netlify/sdk--ui-react': 1.7.1(@types/react@18.3.11)(autoprefixer@10.4.20(postcss@8.4.47))(postcss@8.4.47)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.13(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.3)))(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.3))
       '@sindresorhus/slugify': 2.2.1
       '@stackbit/dev': 1.0.35(graphql@16.9.0)
       '@types/configstore': 6.0.2
@@ -8742,7 +8742,7 @@ snapshots:
       semver: 7.6.3
       string-argv: 0.3.2
       toml: 3.0.0
-      typescript: 5.6.2
+      typescript: 5.6.3
       wretch: 2.10.0
       zod: 3.23.8
       zod-metadata: 1.1.0(zod@3.23.8)
@@ -8776,18 +8776,18 @@ snapshots:
       '@netlify/node-cookies': 0.1.0
       urlpattern-polyfill: 8.0.2
 
-  '@netlify/tailwind-config@2.0.0(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.2))':
+  '@netlify/tailwind-config@2.0.0(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.3))':
     dependencies:
       '@netlify/netlify-design-tokens': 6.0.0
-      '@tailwindcss/container-queries': 0.1.1(tailwindcss@3.4.13(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.2)))
-      tailwindcss: 3.4.13(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.2))
+      '@tailwindcss/container-queries': 0.1.1(tailwindcss@3.4.13(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.3)))
+      tailwindcss: 3.4.13(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.3))
     transitivePeerDependencies:
       - ts-node
 
-  '@netlify/ui@0.0.20(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.2))':
+  '@netlify/ui@0.0.20(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.3))':
     dependencies:
       '@netlify/netlify-design-tokens': 6.0.0
-      '@netlify/tailwind-config': 2.0.0(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.2))
+      '@netlify/tailwind-config': 2.0.0(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.3))
       '@tippyjs/react': 4.2.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       clsx: 2.1.1
       downshift: 9.0.8(react@18.3.1)
@@ -9274,7 +9274,7 @@ snapshots:
 
   '@stackbit/artisanal-names@1.0.1': {}
 
-  '@stackbit/cms-contentful@0.4.56':
+  '@stackbit/cms-contentful@0.4.56(graphql@16.9.0)':
     dependencies:
       '@contentful/rich-text-types': 15.15.1
       '@stackbit/cms-core': 2.0.1(graphql@16.9.0)
@@ -9286,6 +9286,7 @@ snapshots:
     transitivePeerDependencies:
       - debug
       - encoding
+      - graphql
       - supports-color
 
   '@stackbit/cms-core@2.0.1(graphql@16.9.0)':
@@ -9320,7 +9321,7 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@stackbit/cms-git@0.4.18':
+  '@stackbit/cms-git@0.4.18(graphql@16.9.0)':
     dependencies:
       '@stackbit/artisanal-names': 1.0.1
       '@stackbit/cms-core': 2.0.1(graphql@16.9.0)
@@ -9334,11 +9335,15 @@ snapshots:
       micromatch: 4.0.8
       slugify: 1.6.6
     transitivePeerDependencies:
+      - bufferutil
+      - canvas
       - debug
       - encoding
+      - graphql
       - supports-color
+      - utf-8-validate
 
-  '@stackbit/cms-sanity@0.2.56':
+  '@stackbit/cms-sanity@0.2.56(graphql@16.9.0)':
     dependencies:
       '@sanity/block-tools': 2.36.2
       '@sanity/client': 3.4.1
@@ -9358,17 +9363,18 @@ snapshots:
       - canvas
       - debug
       - encoding
+      - graphql
       - supports-color
       - utf-8-validate
 
-  '@stackbit/dev-common@0.5.51':
+  '@stackbit/dev-common@0.5.51(graphql@16.9.0)':
     dependencies:
       '@iarna/toml': 2.2.5
       '@stackbit/artisanal-names': 1.0.1
-      '@stackbit/cms-contentful': 0.4.56
+      '@stackbit/cms-contentful': 0.4.56(graphql@16.9.0)
       '@stackbit/cms-core': 2.0.1(graphql@16.9.0)
-      '@stackbit/cms-git': 0.4.18
-      '@stackbit/cms-sanity': 0.2.56
+      '@stackbit/cms-git': 0.4.18(graphql@16.9.0)
+      '@stackbit/cms-sanity': 0.2.56(graphql@16.9.0)
       '@stackbit/sdk': 2.0.1
       '@stackbit/types': 1.0.1
       '@stackbit/utils': 0.4.19
@@ -9394,14 +9400,15 @@ snapshots:
       - canvas
       - debug
       - encoding
+      - graphql
       - supports-color
       - utf-8-validate
 
   '@stackbit/dev@1.0.35(graphql@16.9.0)':
     dependencies:
       '@stackbit/cms-core': 2.0.1(graphql@16.9.0)
-      '@stackbit/cms-git': 0.4.18
-      '@stackbit/dev-common': 0.5.51
+      '@stackbit/cms-git': 0.4.18(graphql@16.9.0)
+      '@stackbit/dev-common': 0.5.51(graphql@16.9.0)
       '@stackbit/sdk': 2.0.1
       axios: 0.25.0
       chalk: 4.1.2
@@ -9465,9 +9472,9 @@ snapshots:
     dependencies:
       defer-to-connect: 2.0.1
 
-  '@tailwindcss/container-queries@0.1.1(tailwindcss@3.4.13(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.2)))':
+  '@tailwindcss/container-queries@0.1.1(tailwindcss@3.4.13(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.3)))':
     dependencies:
-      tailwindcss: 3.4.13(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.2))
+      tailwindcss: 3.4.13(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.3))
 
   '@tanstack/query-core@5.59.0': {}
 
@@ -9692,7 +9699,7 @@ snapshots:
 
   '@typescript-eslint/types@5.62.0': {}
 
-  '@typescript-eslint/typescript-estree@5.62.0(supports-color@9.4.0)(typescript@5.6.2)':
+  '@typescript-eslint/typescript-estree@5.62.0(supports-color@9.4.0)(typescript@5.6.3)':
     dependencies:
       '@typescript-eslint/types': 5.62.0
       '@typescript-eslint/visitor-keys': 5.62.0
@@ -9700,9 +9707,9 @@ snapshots:
       globby: 11.1.0
       is-glob: 4.0.3
       semver: 7.6.3
-      tsutils: 3.21.0(typescript@5.6.2)
+      tsutils: 3.21.0(typescript@5.6.3)
     optionalDependencies:
-      typescript: 5.6.2
+      typescript: 5.6.3
     transitivePeerDependencies:
       - supports-color
 
@@ -10934,10 +10941,10 @@ snapshots:
 
   detective-typescript@11.2.0(supports-color@9.4.0):
     dependencies:
-      '@typescript-eslint/typescript-estree': 5.62.0(supports-color@9.4.0)(typescript@5.6.2)
+      '@typescript-eslint/typescript-estree': 5.62.0(supports-color@9.4.0)(typescript@5.6.3)
       ast-module-types: 5.0.0
       node-source-walk: 6.0.2
-      typescript: 5.6.2
+      typescript: 5.6.3
     transitivePeerDependencies:
       - supports-color
 
@@ -14077,13 +14084,13 @@ snapshots:
       camelcase-css: 2.0.1
       postcss: 8.4.47
 
-  postcss-load-config@4.0.2(postcss@8.4.47)(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.2)):
+  postcss-load-config@4.0.2(postcss@8.4.47)(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.3)):
     dependencies:
       lilconfig: 3.1.2
       yaml: 2.5.1
     optionalDependencies:
       postcss: 8.4.47
-      ts-node: 10.9.2(@types/node@22.7.4)(typescript@5.6.2)
+      ts-node: 10.9.2(@types/node@22.7.4)(typescript@5.6.3)
 
   postcss-nested@6.2.0(postcss@8.4.47):
     dependencies:
@@ -14980,7 +14987,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  tailwindcss@3.4.13(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.2)):
+  tailwindcss@3.4.13(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.3)):
     dependencies:
       '@alloc/quick-lru': 5.2.0
       arg: 5.0.2
@@ -14999,7 +15006,7 @@ snapshots:
       postcss: 8.4.47
       postcss-import: 15.1.0(postcss@8.4.47)
       postcss-js: 4.0.1(postcss@8.4.47)
-      postcss-load-config: 4.0.2(postcss@8.4.47)(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.2))
+      postcss-load-config: 4.0.2(postcss@8.4.47)(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.3))
       postcss-nested: 6.2.0(postcss@8.4.47)
       postcss-selector-parser: 6.1.2
       resolve: 1.22.8
@@ -15189,7 +15196,7 @@ snapshots:
 
   ts-interface-checker@0.1.13: {}
 
-  ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.2):
+  ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.3):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.11
@@ -15203,7 +15210,7 @@ snapshots:
       create-require: 1.1.1
       diff: 4.0.2
       make-error: 1.3.6
-      typescript: 5.6.2
+      typescript: 5.6.3
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
 
@@ -15211,10 +15218,10 @@ snapshots:
 
   tslib@2.7.0: {}
 
-  tsutils@3.21.0(typescript@5.6.2):
+  tsutils@3.21.0(typescript@5.6.3):
     dependencies:
       tslib: 1.14.1
-      typescript: 5.6.2
+      typescript: 5.6.3
 
   tunnel-agent@0.6.0:
     dependencies:
@@ -15243,7 +15250,7 @@ snapshots:
     dependencies:
       is-typedarray: 1.0.0
 
-  typescript@5.6.2: {}
+  typescript@5.6.3: {}
 
   ufo@1.5.4: {}
 
